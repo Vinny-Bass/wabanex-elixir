@@ -12,8 +12,7 @@ defmodule WabanexWeb.IMCController do
   defp handle_response({:ok, data}, conn) do
     conn
     |> put_status(:ok)
-    |> json(data)
-    data
+    |> json(%{result: data})
   end
 
   defp handle_response({:error, message}, conn) do
