@@ -1,4 +1,4 @@
-defmodule Wabanex.Exercises do
+defmodule Wabanex.Exercise do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -11,8 +11,7 @@ defmodule Wabanex.Exercises do
     :name,
     :video_url,
     :protocol_description,
-    :repetitions,
-    :training_id
+    :repetitions
   ]
 
   schema "exercises" do
@@ -22,6 +21,8 @@ defmodule Wabanex.Exercises do
     field :repetitions, :string
 
     belongs_to :training, Training
+
+    timestamps()
   end
 
   def changeset(exercise, params) do
